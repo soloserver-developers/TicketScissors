@@ -1,0 +1,41 @@
+name: TicketScissors
+version: @version@
+main: pagen.nafuchoco.ticketscissors.TicketScissors
+api-version: 1.15
+authors: [ NAFU_at ]
+description: Support ticket management plugin.
+website: https://toybox.nafuchoco.page/
+
+
+commands:
+  tsreload:
+    description: Reload all the features of the plugin.
+    permission: ticketscissors.reload
+    permission-message: You do not have permission to run this command.
+
+  ticket:
+    description: You can create a support ticket.
+    permission: ticketscissors.ticket
+    permission-message: You do not have permission to run this command.
+
+  tickets:
+    description:
+
+  ticketmd:
+    description:
+
+  ticketrp:
+    description: You can return a reply to the ticket.
+    permission: ticketscissors.ticket.reply
+    permission-message: You do not have permission to run this command.
+
+
+permissions:
+  ticketscissors.reload:
+    default: op
+
+  ticketscissors.ticket:
+    default: true
+
+  ticketscissors.ticket.reply:
+    default: op

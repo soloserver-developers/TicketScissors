@@ -1,0 +1,50 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+group = 'pagen.nafuchoco'
+version = '0.1.0-SNAPSHOT'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+shadowJar {
+    archiveName = "${rootProject.name}.${extension}"
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'spigotmc-repo'
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+    maven {
+        url = 'https://maven.aura-dev.team/repository/auradev-releases/'
+    }
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.14'
+    annotationProcessor 'org.projectlombok:lombok:1.18.14'
+    compileOnly 'org.spigotmc:spigot-api:1.15-R0.1-SNAPSHOT'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation 'team.aura_dev.lib.slf4j-plugin.spigot:slf4j-plugin-spigot:1.2.0.39:1.7.25'
+    implementation 'com.zaxxer:HikariCP:3.4.5'
+    implementation 'mysql:mysql-connector-java:8.0.21'
+    implementation 'org.mariadb.jdbc:mariadb-java-client:2.6.2'
+}
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        filter ReplaceTokens, tokens: [version: version]
+    }
+}

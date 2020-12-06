@@ -1,0 +1,14 @@
+###########################################
+#    TicketScissors Configuration File    #
+#            Author: NAFU_at              #
+#            Version: 1.0                 #
+###########################################
+system:
+
+  database: # Set the connection information of the database to store the data.
+    databaseType: "MARIADB"            # Specify the type of database. (MARIADB/MYSQL)
+    tablePrefix: "sj_"
+    address: localhost:3306
+    database: NeoJukePro
+    username: NeoJukePro
+    password: PaSsWoRd
