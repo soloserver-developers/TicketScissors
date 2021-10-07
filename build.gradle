@@ -34,7 +34,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'org.projectlombok:lombok:1.18.14'
+    compileOnly 'org.projectlombok:lombok:1.18.22'
     annotationProcessor 'org.projectlombok:lombok:1.18.14'
     compileOnly 'org.spigotmc:spigot-api:1.15-R0.1-SNAPSHOT'
     compileOnly 'com.discordsrv:discordsrv:1.22.0'
